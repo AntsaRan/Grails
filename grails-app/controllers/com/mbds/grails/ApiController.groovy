@@ -19,10 +19,10 @@ class ApiController {
                 def annonceInstance = Annonce.get(params.id)
                 if (!annonceInstance)
                     return response.status = HttpServletResponse.SC_NOT_FOUND
-//                response.withFormat {
-//                    xml { render annonceInstance as XML }
-//                    json { render annonceInstance as JSON }
-//                }
+                response.withFormat {
+                    xml { render annonceInstance as XML }
+                    json { render annonceInstance as JSON }
+                }
                 serializeData(annonceInstance, request.getHeader("Accept"))
                 break
             case "PUT":
