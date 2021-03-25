@@ -30,6 +30,7 @@ class UserPasswordEncoderListener {
             if (u.password && ((event instanceof  PreInsertEvent) || (event instanceof PreUpdateEvent && u.isDirty('password')))) {
                 event.getEntityAccess().setProperty('password', encodePassword(u.password))
             }
+
         }
     }
 
