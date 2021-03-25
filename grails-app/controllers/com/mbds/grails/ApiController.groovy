@@ -25,7 +25,20 @@ class ApiController {
                 }
                 serializeData(annonceInstance, request.getHeader("Accept"))
                 break
-            case "PUT":
+            case "POST":
+                def user = User.get(1)
+                def annonceInstance = new Annonce(
+                        title: "Titre de l'annonce api",
+                        description: "Description de l'annonce api",
+                        price: 100
+                )
+                user.addToAnnonces(annonceInstance)
+                user.save(flush: true, failOnError: true)
+                response.withFormat {
+                    xml { render annonceInstance as XML }
+                    json { render annonceInstance as JSON }
+                }
+                serializeData(annonceInstance, request.getHeader("Accept"))
                 break
             case "PATCH":
                 break
