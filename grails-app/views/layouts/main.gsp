@@ -16,7 +16,7 @@
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="fontawesome-free/css/all.min.css"/>
     <asset:stylesheet src="all.min.css"/>
-    <asset:stylesheet src="sb-admin-2.min.css"/>
+    <asset:stylesheet src="sb-admin-2.css"/>
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -223,16 +223,16 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<asset:javascript src="vendor/jquery/jquery.min.js"/>
-<asset:javascript src="vendor/bootstrap/js/bootstrap.bundle.min.js"/>
+<asset:javascript src="jquery.min.js"/>
+<asset:javascript src="bootstrap.bundle.min.js"/>
 
 <!-- Core plugin JavaScript-->
-<asset:javascript src="vendor/jquery-easing/jquery.easing.min.js"/>
+<asset:javascript src="query.easing.min.js"/>
 
 <!-- Custom scripts for all pages-->
-<asset:javascript src="sb-admin-2.min.js"/></script>
+<asset:javascript src="sb-admin-2.js"/></script>
 
-<asset:javascript src="vendor/chart.js/Chart.min.js"/>
+<asset:javascript src="Chart.min.js"/>
 
 <asset:javascript src="chart-area-demo.js"/>
 </body>
