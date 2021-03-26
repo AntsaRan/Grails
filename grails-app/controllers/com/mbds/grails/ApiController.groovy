@@ -2,6 +2,7 @@ package com.mbds.grails
 
 import grails.converters.JSON
 import grails.converters.XML
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 
 import javax.servlet.http.HttpServletResponse
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse
 class ApiController {
 
     AnnonceService annonceService
+    SpringSecurityService springSecurityService
+
 
 //    GET / PUT / PATCH / DELETE
 //    url : localhost:8081/projet/api/annonce(s)/{id}
@@ -45,8 +48,40 @@ class ApiController {
                 serializeData(annonceInstance, request.getHeader("Accept"))
                 break
             case "PATCH":
+                if (!params.id)
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def annonceInstance = Annonce.get(params.id)
+                def annonceJson = request.getJSON()
+                if(annonceJson.title!=null){
+                    annonceInstance.title = annonceJson.title
+                }
+                if(annonceJson.description!=null){
+                    annonceInstance.description = annonceJson.description
+                }
+                if(annonceJson.price!=null){
+                    annonceInstance.price = Double.parseDouble(""+annonceJson.price)
+                }
+                annonceService.save(annonceInstance)
+                if (!annonceInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render annonceInstance as XML }
+                    json { render annonceInstance as JSON }
+                }
+                serializeData(annonceInstance, request.getHeader("Accept"))
                 break
             case "DELETE":
+                if (!params.id )
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def annonceInstance = Annonce.get(params.id)
+                if (!annonceInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render annonceInstance as XML }
+                    json { render annonceInstance as JSON }
+                }
+                annonceService.delete(params.id)
+                return response.status = HttpServletResponse.SC_OK
                 break
             default:
                 return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
@@ -59,19 +94,25 @@ class ApiController {
     def annonces() {
         switch (request.getMethod()) {
             case "POST":
-                def user = User.get(1)
-                def annonceInstance = new Annonce(
-                        title: "Titre de l'annonce api",
-                        description: "Description de l'annonce api",
-                        price: 100
-                )
-                user.addToAnnonces(annonceInstance)
-                user.save(flush: true, failOnError: true)
-                response.withFormat {
-                    xml { render annonceInstance as XML }
-                    json { render annonceInstance as JSON }
+                def currentUser
+                def id
+                if (springSecurityService.isLoggedIn()) {
+                    currentUser = springSecurityService.getCurrentUser()
+                    id=currentUser.id
                 }
-                serializeData(annonceInstance, request.getHeader("Accept"))
+
+                def user = User.get(id)
+                def annonceJson = request.getJSON()
+                annonceJson.each {
+                    def annonceInstance =new Annonce(
+                            title:annonceJson.title,
+                            description:annonceJson.description,
+                            price:annonceJson.price
+                    )
+                    annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
+                    user.addToAnnonces(annonceInstance)
+                }
+                user.save(flush: true, failOnError: true)
                 break
             default:
                 return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
