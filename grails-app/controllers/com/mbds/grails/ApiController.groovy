@@ -104,10 +104,11 @@ class ApiController {
                 def user = User.get(id)
                 def annonceJson = request.getJSON()
                 annonceJson.each {
+                    annonce ->
                     def annonceInstance =new Annonce(
-                            title:annonceJson.title,
-                            description:annonceJson.description,
-                            price:annonceJson.price
+                            title:annonce.title,
+                            description:annonce.description,
+                            price:annonce.price
                     )
                     annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
                     user.addToAnnonces(annonceInstance)
