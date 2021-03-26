@@ -199,7 +199,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Titre de l'annonce api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
+							"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8081/projet/api/annonce/1",
