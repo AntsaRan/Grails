@@ -12,7 +12,7 @@ class ApiController {
 
     AnnonceService annonceService
     SpringSecurityService springSecurityService
-
+    UserService userService
 
 //    GET / PUT / PATCH / DELETE
 //    url : localhost:8081/projet/api/annonce(s)/{id}
@@ -115,6 +115,17 @@ class ApiController {
                 }
                 user.save(flush: true, failOnError: true)
                 break
+            case "GET":
+
+                def annoncesInstance = Annonce.getAll()
+                if (!annoncesInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render annoncesInstance as XML }
+                    json { render annoncesInstance as JSON }
+                }
+                serializeData(annoncesInstance, request.getHeader("Accept"))
+                break
             default:
                 return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
                 break
@@ -124,7 +135,38 @@ class ApiController {
 
 //    GET / PUT / PATCH / DELETE
     def user() {
+        switch (request.getMethod()) {
+            case "GET":
+                if (!params.id)
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def userInstance = User.get(params.id)
+                if (!userInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render userInstance as XML }
+                    json { render userInstance as JSON }
+                }
+                serializeData(userInstance, request.getHeader("Accept"))
+                break
+            case "PUT":
+                if (!params.id)
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def userInstane = User.get(params.id)
+                def userJson = request.getJSON()
+                userInstane.username = userJson.username
+                userInstane.password = userJson.password
+                userService.save(userInstane)
+                if (!userInstane)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render userInstane as XML }
+                    json { render userInstane as JSON }
+                }
+                serializeData(userInstane, request.getHeader("Accept"))
+                break
 
+        }
+        return response.status = HttpServletResponse.SC_NOT_ACCEPTABLE
     }
 
 //    GET / POST
