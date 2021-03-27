@@ -252,6 +252,57 @@ class ApiController {
 
 //    GET / POST
     def users() {
+        switch (request.getMethod()) {
+            case "GET":
+
+                def usersInstance = User.getAll()
+                if (!usersInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render usersInstance as XML }
+                    json { render usersInstance as JSON }
+                }
+                serializeData(usersInstance, request.getHeader("Accept"))
+                break
+            default:
+                return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
+                break
+
+
+            case "POST":
+
+                def userJson = request.getJSON()
+                def role1 = Role.findById(1)
+
+                //def role2 = Role.get(1)
+                //def role3 = Role.get(3)
+                println("itooo" +role1)
+                //println("itooo authority" +role1.authority)
+
+               // println("itooo2" +role2.authority)
+                userJson.each {
+                    user ->
+                        def userInstance =new User(
+                                username:user.username,
+                                password:user.password,
+                                enabled:user.enabled,
+                                accountExpired:user.accountExpired,
+                                accountLocked:user.accountLocked,
+                                passwordExpired:user.passwordExpired
+                        ).save()
+                        def listrole = user.userRole
+                        listrole.each {
+                            role -> def roleee = Role.findById(role)
+                                UserRole.create(userInstance, roleee, true)
+                        }
+
+                }
+                return response.status = HttpServletResponse.SC_OK
+
+                break
+
+        }
+        return response.status = HttpServletResponse.SC_NOT_ACCEPTABLE
 
     }
 
