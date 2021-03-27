@@ -111,7 +111,7 @@
             </tr>
             </thead>
             <tbody>
-            <g:each in="${user.annonces}" var="annonce">
+            <g:each in="${annoncelist}" var="annonce">
                 <tr class="even">
                     <td><a href="/projet/annonce/show/${annonce.id}">${annonce.title}</a></td>
                     <td>${annonce.dateCreated}</td>

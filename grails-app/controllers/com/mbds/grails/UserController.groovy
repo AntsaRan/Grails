@@ -17,18 +17,18 @@ class UserController {
         respond userService.list(params), model:[userCount: userService.count(), userList: userService.list()]
     }
     @Secured(['ROLE_ADMIN','ROLE_MODO'])
-    def show(Long id,Integer max) {
+    def show(Long id,Integer max,Integer offset) {
         def user = User.get(id)
         def userRole = UserRole.findByUser(user)
         def role = Role.get(userRole.roleId)
         if(!max){
             max=10
         }
-        def list=indexuser(max,id)
-        respond userService.get(id), model:[role: role.authority,annoncelist:list,anncount:list.size()]
+        def list=indexuser(max,id,offset)
+        respond userService.get(id), model:[role: role.authority,annoncelist:list,anncount:user.annonces.size()]
     }
-    def indexuser(Integer max,Long id) {
-        def annonces=Annonce.findAllByAuthor(User.findById(id),[max: max,offset: 10])
+    def indexuser(Integer max,Long id,Integer offsett) {
+        def annonces=Annonce.findAllByAuthor(User.findById(id),[max: max,offset: offsett])
         return annonces
     }
     @Secured('ROLE_ADMIN')
