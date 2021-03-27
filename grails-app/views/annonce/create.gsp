@@ -42,22 +42,19 @@
 
                                 <div class="fieldcontain">
                                     <label for="file">Upload</label>
-                                    <input style="display: inline" type="file" name="file" id="file"/>
+                                    <input style="display: inline;height: auto;" type="file" name="file" id="file"/>
                                 </div>
+
                                 <div class="fieldcontain required">
                                     <label for="author">Author
                                         <span class="required-indicator">*</span>
                                     </label>
-                                    <g:select name="author.id" from="${userList}" optionKey="id" optionValue="username" />
+                                    <g:select name="author.id" from="${userList}" optionKey="id"
+                                              optionValue="username"/>
                                 </div>
-                                <a href="#" class="btn btn-success btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                    <span class="text">Split Button Success</span>
-                                </a>
-                                <fieldset class="buttons">
-                                    <g:submitButton class="btn btn-success btn-icon-split" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+                                <fieldset>
+                                    <g:submitButton style="width: 100%; height: 50px; margin-top: 20px;" class="btn btn-success btn-icon-split" name="create"
+                                                    value="${message(code: 'default.button.create.label', default: 'Create')}"/>
                                 </fieldset>
                             </g:uploadForm>
                         </div>

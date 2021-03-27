@@ -20,7 +20,6 @@
                     <th class="sortable"><a href="/projet/user/index?sort=accountLocked&amp;max=10&amp;order=asc">Account Locked</a></th>
                     <th class="sortable"><a href="/projet/user/index?sort=accountExpired&amp;max=10&amp;order=asc">Account Expired</a></th>
                     <th class="sortable"><a href="/projet/user/index?sort=enabled&amp;max=10&amp;order=asc">Enabled</a></th>
-                    <th class="sortable"><a href="/projet/user/index?sort=annonces&amp;max=10&amp;order=asc">Annonces</a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,13 +30,6 @@
                     <td>${user.accountLocked}</td>
                     <td>${user.passwordExpired}</td>
                     <td>${user.enabled}</td>
-                    <td>
-                        <ul>
-                            <g:each in="${user.annonces}" var="annonce">
-                                <li><a href="/projet/annonce/show/${annonce.id}">${annonce.title}</a></li>
-                            </g:each>
-                        </ul>
-                    </td>
                 </tr>
                 </g:each>
                 </tbody>

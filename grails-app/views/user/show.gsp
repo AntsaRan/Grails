@@ -83,13 +83,26 @@
 
             </div>
         </div>
-        <g:form resource="${this.user}" method="DELETE">
-            <fieldset class="buttons">
-                <g:link class="edit" action="edit" resource="${this.user}"><g:message code="default.button.edit.label"
-                                                                                      default="Edit"/></g:link>
-                <input class="delete" type="submit"
-                       value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-                       onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+        <g:form resource="${this.user}" method="DELETE" style="margin-top: 2%;">
+            <fieldset style="
+            display: block;
+            width: fit-content;
+            margin: auto;
+            ">
+                <g:link class="btn btn-primary btn-icon-split" action="edit" resource="${this.user}">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Edit</span>
+                </g:link>
+                <div class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text"><input class="btn btn-danger btn-icon-split" type="submit"
+                           value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                           onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/></span>
+                </div>
             </fieldset>
         </g:form>
     </div>
@@ -120,12 +133,13 @@
             </g:each>
             </tbody>
         </table>
+
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="dataTables_paginate paging_simple_numbers"
                      id="dataTable_paginate">
                     <ul class="pagination">
-                        <g:paginate  params="[id:user.id]" total="${anncount?: 0}"/>
+                        <g:paginate params="[id: user.id]" total="${anncount ?: 0}"/>
                     </ul>
                 </div>
             </div>
