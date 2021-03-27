@@ -8,7 +8,7 @@ import static org.springframework.http.HttpStatus.*
 class UserController {
 
     UserService userService
-    AnnonceController annonceController
+    AnnonceController annonceController=new AnnonceController()
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     @Secured(['ROLE_ADMIN','ROLE_MODO'])
@@ -24,8 +24,12 @@ class UserController {
         if(!max){
             max=10
         }
-        def list=annonceController.indexuser(max,id)
+        def list=indexuser(max,id)
         respond userService.get(id), model:[role: role.authority,annoncelist:list,anncount:list.size()]
+    }
+    def indexuser(Integer max,Long id) {
+        def annonces=Annonce.findAllByAuthor(User.findById(id),[max: max,offset: 10])
+        return annonces
     }
     @Secured('ROLE_ADMIN')
     def create() {
