@@ -17,6 +17,11 @@ class AnnonceController {
                 baseUrl: grailsApplication.config.annonces.illustrations.url
         ]
     }
+    def indexuser(Integer max,Integer id) {
+        def annonces=Annonce.findAllByAuthor(User.findById(id),[max: max,offset: 10])
+        respond annonces
+    }
+
     @Secured(['ROLE_ADMIN','ROLE_MODO'])
     def show(Long id) {
         respond annonceService.get(id)

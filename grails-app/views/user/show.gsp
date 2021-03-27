@@ -125,7 +125,7 @@
                 <div class="dataTables_paginate paging_simple_numbers"
                      id="dataTable_paginate">
                     <ul class="pagination">
-                        <g:paginate params="${pageScope.variables}" total="${annonceCount?: 0}"/>
+                        <g:paginate  params="[id:user.id]" total="${anncount?: 0}"/>
                     </ul>
                 </div>
             </div>
