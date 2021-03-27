@@ -90,7 +90,7 @@
             ">
                 <g:link class="btn btn-primary btn-icon-split" action="edit" resource="${this.user}">
                     <span class="icon text-white-50">
-                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-edit"></i>
                     </span>
                     <span class="text">Edit</span>
                 </g:link>

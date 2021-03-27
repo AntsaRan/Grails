@@ -71,27 +71,25 @@ class AnnonceController {
     }
     @Secured('ROLE_ADMIN')
     def update() {
-        def idsIllustration = params.deleteIllustration.split(',')
-
         def annonce = Annonce.get(params.id)
+
+        if(params.deleteIllustration) {
+            def idsIllustration = params.deleteIllustration.split(',')
+            idsIllustration.each {
+                def illustration = Illustration.get(it)
+                annonce.removeFromIllustrations(illustration)
+            }
+        }
         annonce.title = params.title
         annonce.description = params.description
         annonce.price = Double.parseDouble(params.price)
-        idsIllustration.each {
-                def illustration = Illustration.get(it)
-                annonce.removeFromIllustrations(illustration)
-        }
+
 //        annonce.author = User.get(params.author.id)
         if (annonce == null) {
             notFound()
             return
         }
-        /**
-         * 1. Récupérer le fichier dans la requête
-         * 2. Sauvegarder le fichier localement
-         * 3. Créer un illustration sur le fichier que vous avez sauvegardé
-         * 4. Attacher l'illustration nouvellement créée à l'annonce
-         */
+
         def f = request.getFile('file')
        // def image = annonce.illustrations.find { it.filename == "whatever" }
         if (!f.empty) {
