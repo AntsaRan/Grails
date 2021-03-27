@@ -44,39 +44,47 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse"
-               data-target="#collapseTwo" aria-expanded="true"
-               aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+               data-target="#collapseannonce" aria-expanded="true"
+               aria-controls="collapseannonce">
+                <i class="fas fa-fw fa-newspaper"></i>
                 <span>Annonce</span>
             </a>
-
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+            <div id="collapseannonce" class="collapse" aria-labelledby="headingAnnoncz" data-parent="#accordionSidebar"
                  style="">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/projet/annonce/index">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Annonce Liste
+                         Liste Annonce
                     </a>
 
                     <a class="collapse-item" href="/projet/annonce/create">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Annonce Ajout
+                         Ajout Annonce
                     </a>
                 </div>
             </div>
         </li>
         <li class="nav-item">
-
-            <a class="dropdown-item" href="/projet/user/index">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse"
+               data-target="#collapseUser" aria-expanded="true"
+               aria-controls="collapseUser">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 User
             </a>
+            <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="/projet/user/index">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                         Liste User
+                    </a>
+
+                    <a class="collapse-item" href="/projet/user/create">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                         Ajout User
+                    </a>
+                </div>
+            </div>
         </li>
     </ul>
     <!-- End of Sidebar -->
