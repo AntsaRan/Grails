@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-lg-12 fieldcontain">
                         <label for="file">Upload</label>
-                        <input style="display: inline" type="file" name="file" id="file"/>
+                        <input style="display: inline ;height: 100%;" type="file" name="file" id="file"/>
                     </div>
 
                     <div class="col-lg-12 fieldcontain fieldcontainedit required">
@@ -73,7 +73,7 @@
                         }
                     </script>
 
-                    <div class="col-lg-12 fieldcontainedit" style="margin-top: 15px;">
+                    <div class="col-lg-12 fieldcontainedit" style="margin-top: 15px;margin-bottom: 26px;">
                         <label for="illustrations">Illustrations</label>
                         <div style="display: flex;flex-wrap: wrap">
                             <g:each in="${annonce.illustrations}" var="illustration">
@@ -86,13 +86,9 @@
 
                     </div>
                     <input id="deleteIllustration" name="deleteIllustration" type="hidden" value="" />
-                    <button  type="submit"  class="btn btn-success btn-icon-split" style=" margin-top: 15px;">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <span class="text">Update</span>
-                    </button>
-
+                        <button  type="submit"  class="btn btn-success btn-icon-split" style="height: 50px;width: 70%;margin: auto;display: block;">
+                            <span class="text">Update</span>
+                        </button>
                 </fieldset>
 
             </g:uploadForm>
