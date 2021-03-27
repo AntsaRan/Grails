@@ -20,7 +20,7 @@ class UserController {
         def user = User.get(id)
         def userRole = UserRole.findByUser(user)
         def role = Role.get(userRole.roleId)
-        respond userService.get(id), model:[role: role.authority]
+        respond userService.get(id), model:[role: role.authority,annonceCount:user.annonces.size()]
     }
     @Secured('ROLE_ADMIN')
     def create() {
