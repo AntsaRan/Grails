@@ -28,10 +28,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Basic Form Elements
-                </div>
-
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
@@ -42,7 +38,7 @@
 
                                 <div class="fieldcontain">
                                     <label for="file">Upload</label>
-                                    <input style="display: inline" type="file" name="file" id="file"/>
+                                    <input style="display: inline;height: 100%;" type="file" name="file" id="file"/>
                                 </div>
                                 <div class="fieldcontain required">
                                     <label for="author">Author
@@ -50,14 +46,8 @@
                                     </label>
                                     <g:select name="author.id" from="${userList}" optionKey="id" optionValue="username" />
                                 </div>
-                                <a href="#" class="btn btn-success btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                    <span class="text">Split Button Success</span>
-                                </a>
-                                <fieldset class="buttons">
-                                    <g:submitButton class="btn btn-success btn-icon-split" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+                                <fieldset class="">
+                                    <g:submitButton class="btn btn-success btn-icon-split createbtn" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}"/>
                                 </fieldset>
                             </g:uploadForm>
                         </div>
