@@ -10,6 +10,7 @@
 <a href="#edit-annonce" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
                                                               default="Skip to content&hellip;"/></a>
 
+
 <div id="edit-annonce" class="content scaffold-edit" role="main">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
