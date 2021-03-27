@@ -28,9 +28,6 @@
                             href="/projet/annonce/index?sort=description&amp;max=10&amp;order=asc">Description</a></th>
                     <th class="sortable"><a href="/projet/annonce/index?sort=price&amp;max=10&amp;order=asc">Price</a>
                     </th>
-                    <th class="sortable"><a
-                            href="/projet/annonce/index?sort=illustrations&amp;max=10&amp;order=asc">Illustrations</a>
-                    </th>
                     <th class="sortable"><a href="/projet/annonce/index?sort=author&amp;max=10&amp;order=asc">Author</a>
                     </th>
                 </tr>
@@ -41,11 +38,6 @@
                         <td><a href="/projet/annonce/show/${annonce.id}">${annonce.title}</a></td>
                         <td>${annonce.description}</td>
                         <td>${annonce.price}</td>
-                        <td>
-                            <g:each in="${annonce.illustrations}" var="illustration">
-                                <img src="${baseUrl + illustration.filename}"/>
-                            </g:each>
-                        </td>
                         <td>
                             ${annonce.author.username}
                         </td>

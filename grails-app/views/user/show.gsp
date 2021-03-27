@@ -80,7 +80,6 @@
                         <div class="card-body">${role}</div>
                     </div>
                 </div>
-
             </div>
         </div>
         <g:form resource="${this.user}" method="DELETE" style="margin-top: 2%;">

@@ -55,7 +55,7 @@
                         <input style="display: inline" type="file" name="file" id="file"/>
                     </div>
 
-                    <div class="col-lg-12 fieldcontain required">
+                    <div class="col-lg-6 fieldcontain required">
                         <label for="author">Author
                             <span class="required-indicator">*</span>
                         </label>
@@ -72,7 +72,7 @@
                         }
                     </script>
 
-                    <div class="col-lg-12 fieldcontain">
+                    <div class="col-lg-6 fieldcontain">
                         <label for="illustrations">Illustrations</label>
                         <g:each in="${annonce.illustrations}" var="illustration">
                             <div style="display: inline-block" id="${illustration.id}" >
