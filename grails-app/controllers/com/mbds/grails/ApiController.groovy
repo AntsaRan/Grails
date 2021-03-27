@@ -164,7 +164,88 @@ class ApiController {
                 }
                 serializeData(userInstane, request.getHeader("Accept"))
                 break
+            case "PATCH":
+                if (!params.id)
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def userInstance = User.get(params.id)
+                def userJson = request.getJSON()
+                if(userJson.username!=null){
+                    userInstance.username = userJson.username
+                }
+                if(userJson.password!=null){
+                    userInstance.password = userJson.password
+                }
+                if(userJson.enabled!=null){
+                    userInstance.enabled = userJson.enabled
+                }
+                if(userJson.accountExpired!=null){
+                    userInstance.accountExpired = userJson.accountExpired
+                }
+                if(userJson.accountLocked!=null){
+                    userInstance.accountLocked = userJson.accountLocked
+                }
+                if(userJson.passwordExpired!=null){
+                    userInstance.passwordExpired = userJson.passwordExpired
+                }
 
+                userService.save(userInstance)
+                if (!userInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render userInstance as XML }
+                    json { render userInstance as JSON }
+                }
+                serializeData(userInstance, request.getHeader("Accept"))
+                break
+            case "PATCH":
+                if (!params.id)
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def userInstance = User.get(params.id)
+                def userJson = request.getJSON()
+                if(userJson.username!=null){
+                    userInstance.username = userJson.username
+                }
+                if(userJson.password!=null){
+                    userInstance.password = userJson.password
+                }
+                if(userJson.enabled!=null){
+                    userInstance.enabled = userJson.enabled
+                }
+                if(userJson.accountExpired!=null){
+                    userInstance.accountExpired = userJson.accountExpired
+                }
+                if(userJson.accountLocked!=null){
+                    userInstance.accountLocked = userJson.accountLocked
+                }
+                if(userJson.passwordExpired!=null){
+                    userInstance.passwordExpired = userJson.passwordExpired
+                }
+
+                userService.save(userInstance)
+                if (!userInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render userInstance as XML }
+                    json { render userInstance as JSON }
+                }
+                serializeData(userInstance, request.getHeader("Accept"))
+                break
+            case "DELETE":
+                if (!params.id )
+                    return response.status = HttpServletResponse.SC_BAD_REQUEST
+                def userInstance = User.get(params.id)
+                if (!userInstance)
+                    return response.status = HttpServletResponse.SC_NOT_FOUND
+                response.withFormat {
+                    xml { render userInstance as XML }
+                    json { render userInstance as JSON }
+                }
+                userService.delete(params.id)
+                return response.status = HttpServletResponse.SC_OK
+                break
+            default:
+                return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
+                break
         }
         return response.status = HttpServletResponse.SC_NOT_ACCEPTABLE
     }
