@@ -32,7 +32,7 @@
 
 ## API REST
 - Une sécurité pour l’API Rest est mise en place
-- L’API Rest est disponible sur l'adresse, https://grails-itu-mbds-groupe-4.herokuapp.com/api/
+- L’API Rest est disponible sur l'adresse, https://grails-itu-mbds-groupe-4.herokuapp.com/prjet/api/
 - L’API a entièrement ete réalisée avec nos petites mains.
 - L’API est capable de renvoyer du JSON ou du XML en fonction des paramètres d’appel (header Accept)
 - L’API prends en charge les méthodes 
@@ -57,4 +57,4 @@
     - [Collection heroku](https://gitlab.com/zulmianah/grails-itu-mbds-groupe-4/-/blob/master/postman/groupe%204%20heroku.postman_collection.json)
 
 ## DEPLOIEMENT
-- Notre solution en ligne est deployee sur une plateforme Heroku
+- Notre solution en ligne est deployee sur une plateforme Heroku https://grails-itu-mbds-groupe-4.herokuapp.com/prjet/
