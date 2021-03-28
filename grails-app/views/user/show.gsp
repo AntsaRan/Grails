@@ -16,7 +16,7 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <div class="col-xl-6 col-md-6 mb-4">
+    <div class="col-sm-12 col-xs-12 col-xl-6 col-md-12 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -99,39 +99,42 @@
                         <i class="fas fa-trash"></i>
                     </span>
                     <span class="text"><input class="btn btn-danger btn-icon-split" type="submit"
-                           value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-                           onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/></span>
+                                              value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                                              onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+                    </span>
                 </div>
             </fieldset>
         </g:form>
     </div>
+    <g:if test="${anncount > 0}">
 
-    <div class="col-xl-6 col-md-6 mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Annonces</h6>
-        </div>
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-            <tr>
-                <th class="sortable"><a href="/projet/annonce/index?sort=title&amp;max=10&amp;order=asc">Title</a>
-                </th>
-                <th class="sortable"><a
-                        href="/projet/annonce/index?sort=description&amp;max=10&amp;order=asc">Date created</a></th>
-                <th class="sortable"><a
-                        href="/projet/annonce/index?sort=price&amp;max=10&amp;order=asc">Date last update</a>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <g:each in="${annoncelist}" var="annonce">
-                <tr class="even">
-                    <td><a href="/projet/annonce/show/${annonce.id}">${annonce.title}</a></td>
-                    <td>${annonce.dateCreated}</td>
-                    <td>${annonce.lastUpdated}</td>
+        <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Annonces</h6>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th class="sortable"><a href="/projet/annonce/index?sort=title&amp;max=10&amp;order=asc">Title</a>
+                    </th>
+                    <th class="sortable"><a
+                            href="/projet/annonce/index?sort=description&amp;max=10&amp;order=asc">Date created</a></th>
+                    <th class="sortable"><a
+                            href="/projet/annonce/index?sort=price&amp;max=10&amp;order=asc">Date last update</a>
+                    </th>
                 </tr>
-            </g:each>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+        <g:each in="${annoncelist}" var="annonce">
+            <tr class="even">
+                <td><a href="/projet/annonce/show/${annonce.id}">${annonce.title}</a></td>
+                <td>${annonce.dateCreated}</td>
+                <td>${annonce.lastUpdated}</td>
+            </tr>
+        </g:each>
+
+        </tbody>
+    </table>
 
         <div class="row">
             <div class="col-sm-12 col-md-8">
@@ -143,7 +146,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </g:if>
+</div>
 
 </div>
 </body>
