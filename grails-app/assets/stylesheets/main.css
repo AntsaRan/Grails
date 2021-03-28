@@ -592,3 +592,12 @@ img.grails-logo {
     height: 39px;
     margin-top: 6%;
 }
+.miniature {
+    width: 150px;
+}
+.icondel {
+    vertical-align: text-top;
+}
+.fieldcontainedit{
+    width: 50%;
+}
