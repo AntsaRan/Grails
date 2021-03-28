@@ -33,19 +33,17 @@
                             <g:form resource="${this.user}" method="POST">
                                 <fieldset class="form">
                                     <div class="fieldcontain required">
-                                        <label for="password">Password
-                                            <span class="required-indicator">*</span>
-                                        </label>
-                                        <input type="password" name="password" required="" value="" id="password">
-                                    </div>
-
-                                    <div class="fieldcontain required">
                                         <label for="username">Username
                                             <span class="required-indicator">*</span>
                                         </label>
                                         <input type="text" name="username" value="" required="" id="username">
                                     </div>
-
+                                    <div class="fieldcontain required">
+                                        <label for="password">Password
+                                            <span class="required-indicator">*</span>
+                                        </label>
+                                        <input type="password" name="password" required="" value="" id="password">
+                                    </div>
                                     <div class="required labelflex">
                                         <div for="passwordExpired" class="labeltext">
                                             Password Expired lolo
