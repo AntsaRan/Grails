@@ -54,6 +54,8 @@ filtrer les annonces sur leurs titre / descriptions
         - GET
         - POST
 - La collection POSTMAN : 
+    - [Collection Locale](https://gitlab.com/zulmianah/grails-itu-mbds-groupe-4/-/blob/master/postman/groupe%204%20local.postman_collection.json)
+    - [Collection heroku](https://gitlab.com/zulmianah/grails-itu-mbds-groupe-4/-/blob/master/postman/groupe%204%20heroku.postman_collection.json)
 
 ## DEPLOIEMENT
 - Notre solution en ligne est deployee sur une plateforme Heroku
