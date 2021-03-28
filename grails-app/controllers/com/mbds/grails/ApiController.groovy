@@ -114,6 +114,7 @@ class ApiController {
                     user.addToAnnonces(annonceInstance)
                 }
                 user.save(flush: true, failOnError: true)
+                return response.status = HttpServletResponse.SC_OK
                 break
             case "GET":
 
@@ -125,6 +126,7 @@ class ApiController {
                     json { render annoncesInstance as JSON }
                 }
                 serializeData(annoncesInstance, request.getHeader("Accept"))
+                return response.status = HttpServletResponse.SC_OK
                 break
             default:
                 return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
@@ -197,39 +199,6 @@ class ApiController {
                 }
                 serializeData(userInstance, request.getHeader("Accept"))
                 break
-            case "PATCH":
-                if (!params.id)
-                    return response.status = HttpServletResponse.SC_BAD_REQUEST
-                def userInstance = User.get(params.id)
-                def userJson = request.getJSON()
-                if(userJson.username!=null){
-                    userInstance.username = userJson.username
-                }
-                if(userJson.password!=null){
-                    userInstance.password = userJson.password
-                }
-                if(userJson.enabled!=null){
-                    userInstance.enabled = userJson.enabled
-                }
-                if(userJson.accountExpired!=null){
-                    userInstance.accountExpired = userJson.accountExpired
-                }
-                if(userJson.accountLocked!=null){
-                    userInstance.accountLocked = userJson.accountLocked
-                }
-                if(userJson.passwordExpired!=null){
-                    userInstance.passwordExpired = userJson.passwordExpired
-                }
-
-                userService.save(userInstance)
-                if (!userInstance)
-                    return response.status = HttpServletResponse.SC_NOT_FOUND
-                response.withFormat {
-                    xml { render userInstance as XML }
-                    json { render userInstance as JSON }
-                }
-                serializeData(userInstance, request.getHeader("Accept"))
-                break
             case "DELETE":
                 if (!params.id )
                     return response.status = HttpServletResponse.SC_BAD_REQUEST
@@ -267,19 +236,8 @@ class ApiController {
             default:
                 return response.status = HttpServletResponse.SC_METHOD_NOT_ALLOWED
                 break
-
-
             case "POST":
-
                 def userJson = request.getJSON()
-                def role1 = Role.findById(1)
-
-                //def role2 = Role.get(1)
-                //def role3 = Role.get(3)
-                println("itooo" +role1)
-                //println("itooo authority" +role1.authority)
-
-               // println("itooo2" +role2.authority)
                 userJson.each {
                     user ->
                         def userInstance =new User(
@@ -292,8 +250,8 @@ class ApiController {
                         ).save()
                         def listrole = user.userRole
                         listrole.each {
-                            role -> def roleee = Role.findById(role)
-                                UserRole.create(userInstance, roleee, true)
+                            role -> def r = Role.findById(role)
+                                UserRole.create(userInstance, r, true)
                         }
 
                 }

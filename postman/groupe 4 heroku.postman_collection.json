@@ -1,0 +1,718 @@
+{
+	"info": {
+		"_postman_id": "40ba31f5-95f5-4565-93e5-ee395988f71a",
+		"name": "groupe 4 heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "utilisateurs",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_DOMAIN}}/user/1",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get (S)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_DOMAIN}}/users",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \r\n    { \r\n        \"username\": \"haha\",\r\n        \"password\": \"testpostuser200\",\r\n        \"enabled\": true,\r\n        \"accountExpired\": false,\r\n        \"accountLocked\": false,\r\n        \"passwordExpired\": false,\r\n        \"userRole\" :[1,2,3]\r\n    },\r\n    { \r\n        \"username\": \"testpostuser209\",\r\n        \"password\": \"testpostuser2\",\r\n        \"enabled\": true,\r\n        \"accountExpired\": false,\r\n        \"accountLocked\": false,\r\n        \"passwordExpired\": false,\r\n        \"userRole\" :[1]\r\n   }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/users",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"username\": \"momo\",\r\n    \"password\": \"testpostuser200\",\r\n    \"enabled\": true,\r\n    \"accountExpired\": false,\r\n    \"accountLocked\": false,\r\n    \"passwordExpired\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/user/5",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"username\": \"koko\"\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/user/5",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/user/6",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "annonce",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonce/1",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonce",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get annonces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonces",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    { \r\n        \"title\": \"Titre de l'j api12\",\r\n        \"description\": \"Description de l'annonce api1\",\r\n        \"price\": 1020\r\n   },\r\n   {\r\n        \"title\": \"Titre de l'j api22\",\r\n        \"description\": \"Description de l'annonce api2\",\r\n        \"price\": 1021\r\n\t}\r\n]"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonces",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonce/2",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonce",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUT",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
+								},
+								"url": {
+									"raw": "{{API_DOMAIN}}/annonce/2",
+									"host": [
+										"{{API_DOMAIN}}"
+									],
+									"path": [
+										"annonce",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Mar 2021 11:10:11 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"title\": \"Titre de l'j api\",\n    \"dateCreated\": \"2021-03-26T11:05:57Z\",\n    \"price\": 100,\n    \"lastUpdated\": \"2021-03-26T11:10:11Z\",\n    \"illustrations\": [\n        {\n            \"id\": 6\n        },\n        {\n            \"id\": 10\n        },\n        {\n            \"id\": 8\n        },\n        {\n            \"id\": 7\n        },\n        {\n            \"id\": 9\n        }\n    ],\n    \"description\": \"Description de l'annonce api\",\n    \"author\": {\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "PUT",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
+								},
+								"url": {
+									"raw": "{{API_DOMAIN}}/annonce/2",
+									"host": [
+										"{{API_DOMAIN}}"
+									],
+									"path": [
+										"annonce",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=UTF-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "fr-FR"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Mar 2021 11:09:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\" class=\"no-js\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><meta name=\"description\" content=\"\"><meta name=\"author\" content=\"\"><title>\r\n        Grails Runtime Exception\r\n    </title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"icon\" type=\"image/x-ico\" href=\"/projet/assets/favicon.ico\"/><link rel=\"stylesheet\" href=\"/projet/assets/bootstrap.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/grails.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/main.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/mobile.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/application.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/fontawesome-free/css/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/sb-admin-2.css?compile=false\" /><link\r\n            href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\"\r\n            rel=\"stylesheet\"><meta name=\"layout\" content=\"main\"><link rel=\"stylesheet\" href=\"/projet/assets/errors.css?compile=false\" />\r\n\r\n    \r\n\r\n</head><body id=\"page-top\">\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n        <!-- Sidebar - Brand -->\n        <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\n            <div class=\"sidebar-brand-icon rotate-n-15\">\n                <i class=\"fas fa-laugh-wink\"></i>\n            </div>\n            <div class=\"sidebar-brand-text mx-3\">SB Admin \n                <sup>2</sup>\n            </div>\n        </a>\n        <!-- Nav Item - Tables -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"tables.html\">\n                <i class=\"fas fa-fw fa-table\"></i>\n                <span>Tables</span>\n            </a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\"\r\n               data-target=\"#collapseTwo\" aria-expanded=\"true\"\r\n               aria-controls=\"collapseTwo\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>Annonce</span>\n            </a>\n            <div id=\"collapseTwo\" class=\"collapse show\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"\r\n                 style=\"\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <a class=\"collapse-item\" href=\"/projet/annonce/index\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Liste\n                    </a>\n                    <a class=\"collapse-item\" href=\"/projet/annonce/create\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Ajout\n                    </a>\n                </div>\n            </div>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"dropdown-item\" href=\"/projet/user/index\">\n                <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                User\n            </a>\n        </li>\n    </ul>\n    <!-- End of Sidebar -->\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n        <!-- Main Content -->\n        <div id=\"content\">\n            <!-- Topbar -->\n            <nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n                <!-- Sidebar Toggle (Topbar) -->\n                <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n                    <i class=\"fa fa-bars\"></i>\n                </button>\n                <!-- Topbar Search -->\n                <form>\n                    <div class=\"input-group\">\n                        <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\"\r\n                               aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n                        <div class=\"input-group-append\">\n                            <button class=\"btn btn-primary\" type=\"button\">\n                                <i class=\"fas fa-search fa-sm\"></i>\n                            </button>\n                        </div>\n                    </div>\n                </form>\n                <!-- Topbar Navbar -->\n                <ul class=\"navbar-nav ml-auto\">\n                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n                    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-search fa-fw\"></i>\n                        </a>\n                        <!-- Dropdown - Messages -->\n                        <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\"\r\n                             aria-labelledby=\"searchDropdown\">\n                            <form class=\"form-inline mr-auto w-100 navbar-search\">\n                                <div class=\"input-group\">\n                                    <input type=\"text\" class=\"form-control bg-light border-0 small\"\r\n                                           placeholder=\"Search for...\" aria-label=\"Search\"\r\n                                           aria-describedby=\"basic-addon2\">\n                                    <div class=\"input-group-append\">\n                                        <button class=\"btn btn-primary\" type=\"button\">\n                                            <i class=\"fas fa-search fa-sm\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </form>\n                        </div>\n                    </li>\n                    <div class=\"topbar-divider d-none d-sm-block\"></div>\n                    <!-- Nav Item - User Information -->\n                    <li class=\"nav-item dropdown no-arrow\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Douglas McGee</span>\n                            <img src=\"/projet/assets/undraw_profile.svg\" class=\"img-profile rounded-circle\"/>\n                        </a>\n                        <!-- Dropdown - User Information -->\n                        <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\"\r\n                             aria-labelledby=\"userDropdown\">\n                            <div id=\"controllers\" role=\"navigation\">\n                                <a class=\"dropdown-item\" href=\"/projet/login/index\">\n                                    <i\r\n                                        class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>Login\n                                </a>\n                                <div class=\"dropdown-divider\"></div>\n                                <form action=\"/projet/logout/index\" method=\"post\" class=\"dropdown-item\" >\n                                    <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                    <input type=\"submit\" name=\"Submit\" value=\"Logout\" id=\"Submit\" />\n                                </form>\n                            </div>\n                        </li>\n                    </ul>\n                </nav>\n                <!-- End of Topbar -->\n                <!-- Begin Page Content -->\n                <div class=\"container-fluid\">\n                    <h1>Error 500: Internal Server Error</h1>\n                    <dl class=\"error-details\">\n                        <dt>URI</dt>\n                        <dd>/projet/api/annonce/2</dd>\n                        <dt>Class</dt>\n                        <dd>java.lang.IllegalStateException</dd>\n                        <dt>Message</dt>\n                        <dd>null</dd>\n                        <dt>Caused by</dt>\n                        <dd>getReader() has already been called for this request</dd>\n                    </dl>\n                    <h2>Around line 34 of \n                        <span class=\"filename\">grails-app\\controllers\\com\\mbds\\grails\\ApiController.groovy</span>\n                    </h2>\n                    <pre class=\"snippet\">\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">31:</span>                if (!params.id)\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">32:</span>                    return response.status = HttpServletResponse.SC_BAD_REQUEST\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">33:</span>                def annonceInstance = Annonce.get(params.id)\n                        </code>\n                        <code class=\"line error\">\n                            <span class=\"lineNumber\">34:</span>                def annonceJson = request.getJSON()\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">35:</span>                annonceInstance.title = annonceJson.title\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">36:</span>                annonceInstance.description = annonceJson.description\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">37:</span>                annonceInstance.price = Double.parseDouble(&quot;&quot;+annonceJson.price)\n                        </code>\n                    </pre>\n                    <h2>Trace</h2>\n                    <pre class=\"stack\">    Line | Method\r\n-&gt;&gt;  211 | invoke             in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|    188 | invoke             in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle . . . . . . in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch         in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService . . . .  in     &#39;&#39;\r\n|    970 | processRequest     in org.springframework.web.servlet.FrameworkServlet\r\n|    883 | doPut . . . . . .  in     &#39;&#39;\r\n|    846 | service            in     &#39;&#39;\r\n|     82 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal   in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke             in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter . . . . . in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     52 | doFilterInternal . in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter           in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter           in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter           in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter           in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal   in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter . . . . . in     &#39;&#39;\r\n|     77 | doFilterInternal   in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal . in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker          in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run . . . . . . .  in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run                in java.lang.Thread\r\n\r\nCaused by IllegalStateException: getReader() has already been called for this request\r\n-&gt;&gt;  297 | parse              in grails.converters.JSON\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|     42 | getJSON            in org.grails.web.converters.ConvertersExtension\r\n|     34 | annonce . . . . .  in ApiController.groovy\r\n|    211 | invoke             in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n|    188 | invoke . . . . . . in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle             in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch . . . . in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService          in     &#39;&#39;\r\n|    970 | processRequest . . in org.springframework.web.servlet.FrameworkServlet\r\n|    883 | doPut              in     &#39;&#39;\r\n|    846 | service . . . . .  in     &#39;&#39;\r\n|     82 | doFilter           in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal . in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke . . . . . . in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter           in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     52 | doFilterInternal   in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter . . . . . in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter . . . . . in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter . . . . . in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal . in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter           in     &#39;&#39;\r\n|     77 | doFilterInternal . in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal   in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker . . . .  in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run                in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run . . . . . . .  in java.lang.Thread\r\n</pre>\n                </div>\n                <!-- /.container-fluid -->\r\n\r\n        \n            </div>\n            <!-- End of Main Content -->\n            <!-- Footer -->\n            <footer class=\"sticky-footer bg-white\">\n                <div class=\"container my-auto\">\n                    <div class=\"copyright text-center my-auto\">\n                        <span>Copyright &copy; Your Website 2020</span>\n                    </div>\n                </div>\n            </footer>\n            <!-- End of Footer -->\r\n\r\n    \n        </div>\n        <!-- End of Content Wrapper -->\r\n\r\n\n    </div>\n    <!-- End of Page Wrapper -->\n    <!-- Scroll to Top Button-->\n    <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n        <i class=\"fas fa-angle-up\"></i>\n    </a>\n    <!-- Logout Modal-->\n    <div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n     aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n                    <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">×</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n                    <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- Bootstrap core JavaScript-->\n    <script type=\"text/javascript\" src=\"/projet/assets/jquery.min.js?compile=false\" ></script>\n    <script type=\"text/javascript\" src=\"/projet/assets/bootstrap.bundle.min.js?compile=false\" ></script>\n    <!-- Core plugin JavaScript-->\n    <!-- Custom scripts for all pages-->\n    <script type=\"text/javascript\" src=\"/projet/assets/sb-admin-2.js?compile=false\" ></script>\n</script>\n<script type=\"text/javascript\" src=\"/projet/assets/Chart.min.js?compile=false\" ></script>\n<script type=\"text/javascript\" src=\"/projet/assets/chart-area-demo.js?compile=false\" ></script>\n</body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Titre de haha api2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonce/2",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonce",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PATCH",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/projet/api/annonce/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"projet",
+										"api",
+										"annonce",
+										"2"
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Mar 2021 11:18:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "PATCH",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2ezrzrzer\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/projet/api/annonce/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"projet",
+										"api",
+										"annonce",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=UTF-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "fr-FR"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Mar 2021 11:21:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\" class=\"no-js\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><meta name=\"description\" content=\"\"><meta name=\"author\" content=\"\"><title>\r\n        Grails Runtime Exception\r\n    </title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"icon\" type=\"image/x-ico\" href=\"/projet/assets/favicon.ico\"/><link rel=\"stylesheet\" href=\"/projet/assets/bootstrap.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/grails.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/main.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/mobile.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/application.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/fontawesome-free/css/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/sb-admin-2.css?compile=false\" /><link\r\n            href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\"\r\n            rel=\"stylesheet\"><meta name=\"layout\" content=\"main\"><link rel=\"stylesheet\" href=\"/projet/assets/errors.css?compile=false\" />\r\n\r\n    \r\n\r\n</head><body id=\"page-top\">\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n        <!-- Sidebar - Brand -->\n        <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\n            <div class=\"sidebar-brand-icon rotate-n-15\">\n                <i class=\"fas fa-laugh-wink\"></i>\n            </div>\n            <div class=\"sidebar-brand-text mx-3\">SB Admin \n                <sup>2</sup>\n            </div>\n        </a>\n        <!-- Nav Item - Tables -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"tables.html\">\n                <i class=\"fas fa-fw fa-table\"></i>\n                <span>Tables</span>\n            </a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\"\r\n               data-target=\"#collapseTwo\" aria-expanded=\"true\"\r\n               aria-controls=\"collapseTwo\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>Annonce</span>\n            </a>\n            <div id=\"collapseTwo\" class=\"collapse show\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"\r\n                 style=\"\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <a class=\"collapse-item\" href=\"/projet/annonce/index\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Liste\n                    </a>\n                    <a class=\"collapse-item\" href=\"/projet/annonce/create\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Ajout\n                    </a>\n                </div>\n            </div>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"dropdown-item\" href=\"/projet/user/index\">\n                <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                User\n            </a>\n        </li>\n    </ul>\n    <!-- End of Sidebar -->\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n        <!-- Main Content -->\n        <div id=\"content\">\n            <!-- Topbar -->\n            <nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n                <!-- Sidebar Toggle (Topbar) -->\n                <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n                    <i class=\"fa fa-bars\"></i>\n                </button>\n                <!-- Topbar Search -->\n                <form>\n                    <div class=\"input-group\">\n                        <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\"\r\n                               aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n                        <div class=\"input-group-append\">\n                            <button class=\"btn btn-primary\" type=\"button\">\n                                <i class=\"fas fa-search fa-sm\"></i>\n                            </button>\n                        </div>\n                    </div>\n                </form>\n                <!-- Topbar Navbar -->\n                <ul class=\"navbar-nav ml-auto\">\n                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n                    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-search fa-fw\"></i>\n                        </a>\n                        <!-- Dropdown - Messages -->\n                        <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\"\r\n                             aria-labelledby=\"searchDropdown\">\n                            <form class=\"form-inline mr-auto w-100 navbar-search\">\n                                <div class=\"input-group\">\n                                    <input type=\"text\" class=\"form-control bg-light border-0 small\"\r\n                                           placeholder=\"Search for...\" aria-label=\"Search\"\r\n                                           aria-describedby=\"basic-addon2\">\n                                    <div class=\"input-group-append\">\n                                        <button class=\"btn btn-primary\" type=\"button\">\n                                            <i class=\"fas fa-search fa-sm\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </form>\n                        </div>\n                    </li>\n                    <div class=\"topbar-divider d-none d-sm-block\"></div>\n                    <!-- Nav Item - User Information -->\n                    <li class=\"nav-item dropdown no-arrow\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Douglas McGee</span>\n                            <img src=\"/projet/assets/undraw_profile.svg\" class=\"img-profile rounded-circle\"/>\n                        </a>\n                        <!-- Dropdown - User Information -->\n                        <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\"\r\n                             aria-labelledby=\"userDropdown\">\n                            <div id=\"controllers\" role=\"navigation\">\n                                <a class=\"dropdown-item\" href=\"/projet/login/index\">\n                                    <i\r\n                                        class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>Login\n                                </a>\n                                <div class=\"dropdown-divider\"></div>\n                                <form action=\"/projet/logout/index\" method=\"post\" class=\"dropdown-item\" >\n                                    <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                    <input type=\"submit\" name=\"Submit\" value=\"Logout\" id=\"Submit\" />\n                                </form>\n                            </div>\n                        </li>\n                    </ul>\n                </nav>\n                <!-- End of Topbar -->\n                <!-- Begin Page Content -->\n                <div class=\"container-fluid\">\n                    <h1>Error 500: Internal Server Error</h1>\n                    <dl class=\"error-details\">\n                        <dt>URI</dt>\n                        <dd>/projet/api/annonce/2</dd>\n                        <dt>Class</dt>\n                        <dd>java.lang.NumberFormatException</dd>\n                        <dt>Message</dt>\n                        <dd>null</dd>\n                        <dt>Caused by</dt>\n                        <dd>For input string: &quot;null&quot;</dd>\n                    </dl>\n                    <h2>Around line 59 of \n                        <span class=\"filename\">grails-app\\controllers\\com\\mbds\\grails\\ApiController.groovy</span>\n                    </h2>\n                    <pre class=\"snippet\">\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">56:</span>                    annonceInstance.description = annonceJson.description\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">57:</span>                }\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">58:</span>                if(annonceInstance.price!=null){\n                        </code>\n                        <code class=\"line error\">\n                            <span class=\"lineNumber\">59:</span>                    annonceInstance.price = Double.parseDouble(&quot;&quot;+annonceJson.price)\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">60:</span>                }\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">61:</span>                annonceService.save(annonceInstance)\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">62:</span>                if (!annonceInstance)\n                        </code>\n                    </pre>\n                    <h2>Trace</h2>\n                    <pre class=\"stack\">    Line | Method\r\n-&gt;&gt;  211 | invoke             in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|    188 | invoke             in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle . . . . . . in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch         in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService . . . .  in     &#39;&#39;\r\n|    970 | processRequest     in org.springframework.web.servlet.FrameworkServlet\r\n|    843 | service . . . . .  in     &#39;&#39;\r\n|     82 | doFilter           in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal . in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke . . . . . . in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter           in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     54 | doFilterInternal   in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter . . . . . in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter . . . . . in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter . . . . . in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal . in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter           in     &#39;&#39;\r\n|     77 | doFilterInternal . in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal   in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker . . . .  in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run                in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run . . . . . . .  in java.lang.Thread\r\n\r\nCaused by NumberFormatException: For input string: &quot;null&quot;\r\n-&gt;&gt;  538 | parseDouble        in java.lang.Double\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|     59 | annonce            in ApiController.groovy\r\n|    211 | invoke . . . . . . in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n|    188 | invoke             in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle . . . . . . in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch         in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService . . . .  in     &#39;&#39;\r\n|    970 | processRequest     in org.springframework.web.servlet.FrameworkServlet\r\n|    843 | service . . . . .  in     &#39;&#39;\r\n|     82 | doFilter           in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal . in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke . . . . . . in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter           in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     54 | doFilterInternal   in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter . . . . . in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter . . . . . in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter . . . . . in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal . in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter           in     &#39;&#39;\r\n|     77 | doFilterInternal . in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal   in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker . . . .  in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run                in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run . . . . . . .  in java.lang.Thread\r\n</pre>\n                </div>\n                <!-- /.container-fluid -->\r\n\r\n        \n            </div>\n            <!-- End of Main Content -->\n            <!-- Footer -->\n            <footer class=\"sticky-footer bg-white\">\n                <div class=\"container my-auto\">\n                    <div class=\"copyright text-center my-auto\">\n                        <span>Copyright &copy; Your Website 2020</span>\n                    </div>\n                </div>\n            </footer>\n            <!-- End of Footer -->\r\n\r\n    \n        </div>\n        <!-- End of Content Wrapper -->\r\n\r\n\n    </div>\n    <!-- End of Page Wrapper -->\n    <!-- Scroll to Top Button-->\n    <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n        <i class=\"fas fa-angle-up\"></i>\n    </a>\n    <!-- Logout Modal-->\n    <div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n     aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n                    <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">×</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n                    <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- Bootstrap core JavaScript-->\n    <script type=\"text/javascript\" src=\"/projet/assets/jquery.min.js?compile=false\" ></script>\n    <script type=\"text/javascript\" src=\"/projet/assets/bootstrap.bundle.min.js?compile=false\" ></script>\n    <!-- Core plugin JavaScript-->\n    <!-- Custom scripts for all pages-->\n    <script type=\"text/javascript\" src=\"/projet/assets/sb-admin-2.js?compile=false\" ></script>\n</script>\n<script type=\"text/javascript\" src=\"/projet/assets/Chart.min.js?compile=false\" ></script>\n<script type=\"text/javascript\" src=\"/projet/assets/chart-area-demo.js?compile=false\" ></script>\n</body>\n</html>"
+						},
+						{
+							"name": "PATCH",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/projet/api/annonce/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"projet",
+										"api",
+										"annonce",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=UTF-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "fr-FR"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Mar 2021 11:21:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\" class=\"no-js\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><meta name=\"description\" content=\"\"><meta name=\"author\" content=\"\"><title>\r\n        Grails Runtime Exception\r\n    </title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"icon\" type=\"image/x-ico\" href=\"/projet/assets/favicon.ico\"/><link rel=\"stylesheet\" href=\"/projet/assets/bootstrap.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/grails.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/main.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/mobile.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/application.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/fontawesome-free/css/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/all.min.css?compile=false\" /><link rel=\"stylesheet\" href=\"/projet/assets/sb-admin-2.css?compile=false\" /><link\r\n            href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\"\r\n            rel=\"stylesheet\"><meta name=\"layout\" content=\"main\"><link rel=\"stylesheet\" href=\"/projet/assets/errors.css?compile=false\" />\r\n\r\n    \r\n\r\n</head><body id=\"page-top\">\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n        <!-- Sidebar - Brand -->\n        <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\n            <div class=\"sidebar-brand-icon rotate-n-15\">\n                <i class=\"fas fa-laugh-wink\"></i>\n            </div>\n            <div class=\"sidebar-brand-text mx-3\">SB Admin \n                <sup>2</sup>\n            </div>\n        </a>\n        <!-- Nav Item - Tables -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"tables.html\">\n                <i class=\"fas fa-fw fa-table\"></i>\n                <span>Tables</span>\n            </a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\"\r\n               data-target=\"#collapseTwo\" aria-expanded=\"true\"\r\n               aria-controls=\"collapseTwo\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>Annonce</span>\n            </a>\n            <div id=\"collapseTwo\" class=\"collapse show\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"\r\n                 style=\"\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <a class=\"collapse-item\" href=\"/projet/annonce/index\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Liste\n                    </a>\n                    <a class=\"collapse-item\" href=\"/projet/annonce/create\">\n                        <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                        Annonce Ajout\n                    </a>\n                </div>\n            </div>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"dropdown-item\" href=\"/projet/user/index\">\n                <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\r\n                User\n            </a>\n        </li>\n    </ul>\n    <!-- End of Sidebar -->\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n        <!-- Main Content -->\n        <div id=\"content\">\n            <!-- Topbar -->\n            <nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n                <!-- Sidebar Toggle (Topbar) -->\n                <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n                    <i class=\"fa fa-bars\"></i>\n                </button>\n                <!-- Topbar Search -->\n                <form>\n                    <div class=\"input-group\">\n                        <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\"\r\n                               aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n                        <div class=\"input-group-append\">\n                            <button class=\"btn btn-primary\" type=\"button\">\n                                <i class=\"fas fa-search fa-sm\"></i>\n                            </button>\n                        </div>\n                    </div>\n                </form>\n                <!-- Topbar Navbar -->\n                <ul class=\"navbar-nav ml-auto\">\n                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n                    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-search fa-fw\"></i>\n                        </a>\n                        <!-- Dropdown - Messages -->\n                        <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\"\r\n                             aria-labelledby=\"searchDropdown\">\n                            <form class=\"form-inline mr-auto w-100 navbar-search\">\n                                <div class=\"input-group\">\n                                    <input type=\"text\" class=\"form-control bg-light border-0 small\"\r\n                                           placeholder=\"Search for...\" aria-label=\"Search\"\r\n                                           aria-describedby=\"basic-addon2\">\n                                    <div class=\"input-group-append\">\n                                        <button class=\"btn btn-primary\" type=\"button\">\n                                            <i class=\"fas fa-search fa-sm\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </form>\n                        </div>\n                    </li>\n                    <div class=\"topbar-divider d-none d-sm-block\"></div>\n                    <!-- Nav Item - User Information -->\n                    <li class=\"nav-item dropdown no-arrow\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"\r\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Douglas McGee</span>\n                            <img src=\"/projet/assets/undraw_profile.svg\" class=\"img-profile rounded-circle\"/>\n                        </a>\n                        <!-- Dropdown - User Information -->\n                        <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\"\r\n                             aria-labelledby=\"userDropdown\">\n                            <div id=\"controllers\" role=\"navigation\">\n                                <a class=\"dropdown-item\" href=\"/projet/login/index\">\n                                    <i\r\n                                        class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>Login\n                                </a>\n                                <div class=\"dropdown-divider\"></div>\n                                <form action=\"/projet/logout/index\" method=\"post\" class=\"dropdown-item\" >\n                                    <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                    <input type=\"submit\" name=\"Submit\" value=\"Logout\" id=\"Submit\" />\n                                </form>\n                            </div>\n                        </li>\n                    </ul>\n                </nav>\n                <!-- End of Topbar -->\n                <!-- Begin Page Content -->\n                <div class=\"container-fluid\">\n                    <h1>Error 500: Internal Server Error</h1>\n                    <dl class=\"error-details\">\n                        <dt>URI</dt>\n                        <dd>/projet/api/annonce/2</dd>\n                        <dt>Class</dt>\n                        <dd>java.lang.NumberFormatException</dd>\n                        <dt>Message</dt>\n                        <dd>null</dd>\n                        <dt>Caused by</dt>\n                        <dd>For input string: &quot;null&quot;</dd>\n                    </dl>\n                    <h2>Around line 59 of \n                        <span class=\"filename\">grails-app\\controllers\\com\\mbds\\grails\\ApiController.groovy</span>\n                    </h2>\n                    <pre class=\"snippet\">\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">56:</span>                    annonceInstance.description = annonceJson.description\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">57:</span>                }\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">58:</span>                if(annonceInstance.price!=null){\n                        </code>\n                        <code class=\"line error\">\n                            <span class=\"lineNumber\">59:</span>                    annonceInstance.price = Double.parseDouble(&quot;&quot;+annonceJson.price)\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">60:</span>                }\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">61:</span>                annonceService.save(annonceInstance)\n                        </code>\n                        <code class=\"line\">\n                            <span class=\"lineNumber\">62:</span>                if (!annonceInstance)\n                        </code>\n                    </pre>\n                    <h2>Trace</h2>\n                    <pre class=\"stack\">    Line | Method\r\n-&gt;&gt;  211 | invoke             in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|    188 | invoke             in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle . . . . . . in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch         in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService . . . .  in     &#39;&#39;\r\n|    970 | processRequest     in org.springframework.web.servlet.FrameworkServlet\r\n|    843 | service . . . . .  in     &#39;&#39;\r\n|     82 | doFilter           in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal . in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke . . . . . . in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter           in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     54 | doFilterInternal   in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter . . . . . in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter . . . . . in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter . . . . . in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal . in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter           in     &#39;&#39;\r\n|     77 | doFilterInternal . in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal   in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker . . . .  in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run                in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run . . . . . . .  in java.lang.Thread\r\n\r\nCaused by NumberFormatException: For input string: &quot;null&quot;\r\n-&gt;&gt;  538 | parseDouble        in java.lang.Double\r\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n|     59 | annonce            in ApiController.groovy\r\n|    211 | invoke . . . . . . in org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker\r\n|    188 | invoke             in org.grails.core.DefaultGrailsControllerClass\r\n|     90 | handle . . . . . . in org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter\r\n|    967 | doDispatch         in org.springframework.web.servlet.DispatcherServlet\r\n|    901 | doService . . . .  in     &#39;&#39;\r\n|    970 | processRequest     in org.springframework.web.servlet.FrameworkServlet\r\n|    843 | service . . . . .  in     &#39;&#39;\r\n|     82 | doFilter           in grails.plugin.springsecurity.rest.RestLogoutFilter\r\n|     55 | doFilterInternal . in org.springframework.boot.web.filter.ApplicationContextHeaderFilter\r\n|    317 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    127 | invoke . . . . . . in org.springframework.security.web.access.intercept.FilterSecurityInterceptor\r\n|     91 | doFilter           in     &#39;&#39;\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    114 | doFilter           in org.springframework.security.web.access.ExceptionTranslationFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     54 | doFilterInternal   in grails.plugin.springsecurity.web.filter.GrailsHttpPutFormContentFilter\r\n|    331 | doFilter . . . . . in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    121 | processFilterChain in grails.plugin.springsecurity.rest.RestTokenValidationFilter\r\n|     87 | doFilter . . . . . in     &#39;&#39;\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    170 | doFilter . . . . . in org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    139 | doFilter . . . . . in grails.plugin.springsecurity.rest.RestAuthenticationFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     64 | doFilter . . . . . in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|     58 | doFilter . . . . . in grails.plugin.springsecurity.web.SecurityRequestHolderFilter\r\n|    331 | doFilter           in org.springframework.security.web.FilterChainProxy$VirtualFilterChain\r\n|    214 | doFilterInternal . in org.springframework.security.web.FilterChainProxy\r\n|    177 | doFilter           in     &#39;&#39;\r\n|     77 | doFilterInternal . in org.grails.web.servlet.mvc.GrailsWebRequestFilter\r\n|     67 | doFilterInternal   in org.grails.web.filters.HiddenHttpMethodFilter\r\n|   1142 | runWorker . . . .  in java.util.concurrent.ThreadPoolExecutor\r\n|    617 | run                in java.util.concurrent.ThreadPoolExecutor$Worker\r\n^    745 | run . . . . . . .  in java.lang.Thread\r\n</pre>\n                </div>\n                <!-- /.container-fluid -->\r\n\r\n        \n            </div>\n            <!-- End of Main Content -->\n            <!-- Footer -->\n            <footer class=\"sticky-footer bg-white\">\n                <div class=\"container my-auto\">\n                    <div class=\"copyright text-center my-auto\">\n                        <span>Copyright &copy; Your Website 2020</span>\n                    </div>\n                </div>\n            </footer>\n            <!-- End of Footer -->\r\n\r\n    \n        </div>\n        <!-- End of Content Wrapper -->\r\n\r\n\n    </div>\n    <!-- End of Page Wrapper -->\n    <!-- Scroll to Top Button-->\n    <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n        <i class=\"fas fa-angle-up\"></i>\n    </a>\n    <!-- Logout Modal-->\n    <div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n     aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n                    <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">×</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n                    <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- Bootstrap core JavaScript-->\n    <script type=\"text/javascript\" src=\"/projet/assets/jquery.min.js?compile=false\" ></script>\n    <script type=\"text/javascript\" src=\"/projet/assets/bootstrap.bundle.min.js?compile=false\" ></script>\n    <!-- Core plugin JavaScript-->\n    <!-- Custom scripts for all pages-->\n    <script type=\"text/javascript\" src=\"/projet/assets/sb-admin-2.js?compile=false\" ></script>\n</script>\n<script type=\"text/javascript\" src=\"/projet/assets/Chart.min.js?compile=false\" ></script>\n<script type=\"text/javascript\" src=\"/projet/assets/chart-area-demo.js?compile=false\" ></script>\n</body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonce/2",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonce",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"password\"\r\n}"
+				},
+				"url": {
+					"raw": "{{API_DOMAIN}}/login",
+					"host": [
+						"{{API_DOMAIN}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTdlVcL2JRQlJcL1RoTlJnVlNnRWtnZFlBRTI1RWgwek1SbjFjb05xR2tXa0VBWCsrRWVuT1wvTTNSbVNwY3BFaHd5cGFKRXFkZTNJZjlJdVwvUU5RTzNSbDd0cDNodURBZ25xVFwvZTduMzlmenhSVlVqSWJuc1daY0dEOFZXY3lsYjFMTlpXd3d6RFMzSFQ4enFDTzBPZUpGRG16U0JLNlBWd0l2Z0JLUExEd05EdGd4cXdvbTQrcG02d0JEVzJ0cldGSTZ2bUhjMXl6QkU2VVBcL1Z2dVVHbThJMUJRZTk5S01MSU5reXdNVlNadFhjbjFkc28xUnRzd1Vjd0NGUjY2MFZSSU55Z3RaOElNUTBkUXNwYkFLSUF4bHRsM2lsUTVHZ3ZqMTJZenkwVzFnYllXd09PVUdVUHU3aVZwV0dmZDNUdWJraEljd1hzb3QxT1BEblczNEtDKzRcL0ZYbFJDVW1pdHA1cHN5VVJIZjUwNmMrTHN6WnpcLzdYN3ZORWdCMXN2andOOFg4MlFwMHYrXC8rbmMyTDlrSUwwMFBXQzFpdG5aS2J5WUw1clVhbmZQbGw2OVA1MVllZFI2VHNFQnZcL3Y0XC81NVp2bU9xc3FTWmxtVmczdGlHaFB5dTZaeUZjZUpoOXNvZU0zZUpJS3BEOUtXb3h1SlFwaWlsdldTZ3o2dGpENlpqTlkzMXRlZVwvMnk3bDRyTEVxNEpOVW5lV2kzTFQ5UXRLdmVuNDhcLytuT1wvaU9FVlZJNlp5SkE2bnloQTlTeHBvVDY5T0o4WitcL3k3bHljWVwvTTNcL0FNaDBvOTRSQXdBQSIsInN1YiI6ImFkbWluIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJTcHJpbmcgU2VjdXJpdHkgUkVTVCBHcmFpbHMgUGx1Z2luIiwiZXhwIjoxNjE2OTUwMjY0LCJpYXQiOjE2MTY5NDY2NjR9.qgUinNVa-8KkWawI6r6Iyhkb26KxcXP-EJk0z1FmdNo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_DOMAIN",
+			"value": "http://grails-itu-mbds-groupe-4.herokuapp.com/projet/api"
+		}
+	]
+}

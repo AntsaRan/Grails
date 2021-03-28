@@ -1,44 +1,50 @@
 {
 	"info": {
-		"_postman_id": "b340435a-ca3a-4e18-8f4c-82a1002c8003",
-		"name": "groupe 4",
+		"_postman_id": "901ce786-ecdb-47f9-a613-b1046934226a",
+		"name": "groupe 4 local",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "annonces",
+			"name": "utilisateurs",
 			"item": [
 				{
 					"name": "get",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTdlVcL2JRQlJcL1RrTkJJUEVsdFJJRExNQ0dITFVkTXdHbFZTczNvSVlzSUlFdTlzTTlPTis1ZDJkSWxpcFRPekJRdFNBaHNUTHluNVNGUHdEQndNcmN0ZTlNd0drWDFKdnNkelwvXC92cDdQYnFIUGFIZ1ZhOGFGOFZPUnhWejZKdFZjeGdiRFRIUGI5ak9ET2tLYkk5N213QVpONE81NEpmQUNLUEhJd25pd3pYWlpSVEFaVjVhYjJ4amFha3ZEUzZYakx1T1daZ251S2IzalAzQ0hTdU5mQWdXMWQxcUNcL2pVWVkyR29NbWxyU2k2MVVxNHhXb1BSWWhhb2NNZU5ub1YwZzlKeUprd3Z0QjhsYXdxTUFoaGltZjJrU0pXanNUQnlaemF6WEZUcWFLc0JES1RNR0hMM1Q1SzZkZGJkdmJNcEtjRm4rQUxsVnVyUm9lNW1IZFIzUFA2aUVvSlNjeVhOVEVNbUt1SmIzSWtUZjJmeXg4WEJTYWRSQXFCTzVoN1wvcHBoUExFRG4xOGJ2cWJ4b0w3VHd2TWQ2QWF1MlVuSXpWakN2YW5US2w4Y3JQNDl1djYwXC9JV1dIZVBQXC8rNWlaN3piWFhsUkp5alN6cW1kSFJMdFhkczlFdnZBNCtmMFcybjZkSjZsQStxT2t4ZWhCb2lDbXVHV3R4SDNmRmdZXC9MZ2RMbVwvT3ZQN3lydWRlbkxFcTRmRUd5dzNscXR5NFwvVUxTc1wvWnZ2NXdmVFYwVHhIdnAybWNpUVNoOHRRTFVzYWFMK2VuWTBPWFI0dlo5SDZQN081VDlseHpMUUVnTUFBQT09Iiwic3ViIjoiYWRtaW4xIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJTcHJpbmcgU2VjdXJpdHkgUkVTVCBHcmFpbHMgUGx1Z2luIiwiZXhwIjoxNjE2MjcyNzg2LCJpYXQiOjE2MTYyNjkxODZ9.VNw1yIMrV20jRVG_kpmuPz1o_i6oRnHbMlBtVd2UBdY",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonces/1?",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/user/1",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
-								"annonces",
+								"user",
 								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get (S)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_DOMAIN}}/users",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"users"
 							],
 							"query": [
 								{
@@ -55,24 +61,24 @@
 					"name": "post",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \r\n    { \r\n        \"username\": \"haha\",\r\n        \"password\": \"testpostuser200\",\r\n        \"enabled\": true,\r\n        \"accountExpired\": false,\r\n        \"accountLocked\": false,\r\n        \"passwordExpired\": false,\r\n        \"userRole\" :[1,2,3]\r\n    },\r\n    { \r\n        \"username\": \"testpostuser209\",\r\n        \"password\": \"testpostuser2\",\r\n        \"enabled\": true,\r\n        \"accountExpired\": false,\r\n        \"accountLocked\": false,\r\n        \"passwordExpired\": false,\r\n        \"userRole\" :[1]\r\n   }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
 							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[  { \"title\": \"Titre de l'j api1\",\r\n    \"description\": \"Description de l'annonce api1\",\r\n    \"price\": 100\r\n   },\r\n   {\r\n    \"title\": \"Titre de l'j api2\",\r\n    \"description\": \"Description de l'annonce api2\",\r\n    \"price\": 101\r\n\t}\r\n]"
 						},
 						"url": {
-							"raw": ""
+							"raw": "{{API_DOMAIN}}/users",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -84,10 +90,39 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{ \r\n    \"username\": \"momo\",\r\n    \"password\": \"testpostuser200\",\r\n    \"enabled\": true,\r\n    \"accountExpired\": false,\r\n    \"accountLocked\": false,\r\n    \"passwordExpired\": false\r\n}"
 						},
 						"url": {
-							"raw": ""
+							"raw": "{{API_DOMAIN}}/user/5",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"username\": \"koko\"\r\n}"
+						},
+						"url": {
+							"raw": "{{API_DOMAIN}}/user/5",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"5"
+							]
 						}
 					},
 					"response": []
@@ -102,72 +137,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "utilisateurs",
-			"item": [
-				{
-					"name": "get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "post",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "put",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": ""
+							"raw": "{{API_DOMAIN}}/user/6",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"user",
+								"6"
+							]
 						}
 					},
 					"response": []
@@ -193,20 +170,12 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonce/1",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/annonce/1",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
 								"annonce",
 								"1"
 							]
@@ -215,7 +184,24 @@
 					"response": []
 				},
 				{
-					"name": "post app/json",
+					"name": "get annonces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_DOMAIN}}/annonces",
+							"host": [
+								"{{API_DOMAIN}}"
+							],
+							"path": [
+								"annonces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -232,20 +218,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "[\r\n    { \r\n        \"title\": \"Titre de l'j api12\",\r\n        \"description\": \"Description de l'annonce api1\",\r\n        \"price\": 1020\r\n   },\r\n   {\r\n        \"title\": \"Titre de l'j api22\",\r\n        \"description\": \"Description de l'annonce api2\",\r\n        \"price\": 1021\r\n\t}\r\n]"
 						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonce/1",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/annonces",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
-								"annonce",
-								"1"
+								"annonces"
 							]
 						}
 					},
@@ -272,15 +253,11 @@
 							"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonce/2",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/annonce/2",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
 								"annonce",
 								"2"
 							]
@@ -308,15 +285,11 @@
 									"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8081/projet/api/annonce/2",
-									"protocol": "http",
+									"raw": "{{API_DOMAIN}}/annonce/2",
 									"host": [
-										"localhost"
+										"{{API_DOMAIN}}"
 									],
-									"port": "8081",
 									"path": [
-										"projet",
-										"api",
 										"annonce",
 										"2"
 									]
@@ -367,15 +340,11 @@
 									"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8081/projet/api/annonce/2",
-									"protocol": "http",
+									"raw": "{{API_DOMAIN}}/annonce/2",
 									"host": [
-										"localhost"
+										"{{API_DOMAIN}}"
 									],
-									"port": "8081",
 									"path": [
-										"projet",
-										"api",
 										"annonce",
 										"2"
 									]
@@ -434,18 +403,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
+							"raw": "{\r\n    \"title\": \"Titre de haha api2\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonce/2",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/annonce/2",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
 								"annonce",
 								"2"
 							]
@@ -505,7 +470,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "PATCH",
@@ -526,7 +491,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Titre de l'j api2ezrzrzer\"\r\n}"
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8081/projet/api/annonce/2",
@@ -594,7 +559,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2ezrzrzer\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8081/projet/api/annonce/2",
@@ -667,15 +632,11 @@
 							"raw": "{\r\n    \"title\": \"Titre de l'j api\",\r\n    \"description\": \"Description de l'annonce api\",\r\n    \"price\": 100\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/projet/api/annonce/2",
-							"protocol": "http",
+							"raw": "{{API_DOMAIN}}/annonce/2",
 							"host": [
-								"localhost"
+								"{{API_DOMAIN}}"
 							],
-							"port": "8081",
 							"path": [
-								"projet",
-								"api",
 								"annonce",
 								"2"
 							]
@@ -687,6 +648,17 @@
 		},
 		{
 			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -695,15 +667,11 @@
 					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"password\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8081/projet/api/login",
-					"protocol": "http",
+					"raw": "{{API_DOMAIN}}/login",
 					"host": [
-						"localhost"
+						"{{API_DOMAIN}}"
 					],
-					"port": "8081",
 					"path": [
-						"projet",
-						"api",
 						"login"
 					]
 				}
@@ -716,7 +684,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTdlVcL2JRQlJcL1RoTlJnVlNnRWtnZFlBRTI1RWgwek1SbjFjb05xR2tXa0VBWCsrRWVuT1wvTTNSbVNwY3BFaHd5cGFKRXFkZTNJZjlJdVwvUU5RTzNSbDd0cDNodURBZ25xVFwvZTduMzlmenhSVlVqSWJuc1daY0dEOFZXY3lsYjFMTlpXd3d6RFMzSFQ4enFDTzBPZUpGRG16U0JLNlBWd0l2Z0JLUExEd05EdGd4cXdvbTQrcG02d0JEVzJ0cldGSTZ2bUhjMXl6QkU2VVBcL1Z2dVVHbThJMUJRZTk5S01MSU5reXdNVlNadFhjbjFkc28xUnRzd1Vjd0NGUjY2MFZSSU55Z3RaOElNUTBkUXNwYkFLSUF4bHRsM2lsUTVHZ3ZqMTJZenkwVzFnYllXd09PVUdVUHU3aVZwV0dmZDNUdWJraEljd1hzb3QxT1BEblczNEtDKzRcL0ZYbFJDVW1pdHA1cHN5VVJIZjUwNmMrTHN6WnpcLzdYN3ZORWdCMXN2andOOFg4MlFwMHYrXC8rbmMyTDlrSUwwMFBXQzFpdG5aS2J5WUw1clVhbmZQbGw2OVA1MVllZFI2VHNFQnZcL3Y0XC81NVp2bU9xc3FTWmxtVmczdGlHaFB5dTZaeUZjZUpoOXNvZU0zZUpJS3BEOUtXb3h1SlFwaWlsdldTZ3o2dGpENlpqTlkzMXRlZVwvMnk3bDRyTEVxNEpOVW5lV2kzTFQ5UXRLdmVuNDhcLytuT1wvaU9FVlZJNlp5SkE2bnloQTlTeHBvVDY5T0o4WitcL3k3bHljWVwvTTNcL0FNaDBvOTRSQXdBQSIsInN1YiI6ImFkbWluIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJTcHJpbmcgU2VjdXJpdHkgUkVTVCBHcmFpbHMgUGx1Z2luIiwiZXhwIjoxNjE2NzY0MDA3LCJpYXQiOjE2MTY3NjA0MDd9.09sYlB_0sRX3vu5nJoC-D4q9o4wTQKX1CUwBazf-fug",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTdlVcL2JRQlJcL1RoTlJnVlNnRWtnZFlBRTI1RWgwek1SbjFjb05xR2tXa0VBWCsrRWVuT1wvTTNSbVNwY3BFaHd5cGFKRXFkZTNJZjlJdVwvUU5RTzNSbDd0cDNodURBZ25xVFwvZTduMzlmenhSVlVqSWJuc1daY0dEOFZXY3lsYjFMTlpXd3d6RFMzSFQ4enFDTzBPZUpGRG16U0JLNlBWd0l2Z0JLUExEd05EdGd4cXdvbTQrcG02d0JEVzJ0cldGSTZ2bUhjMXl6QkU2VVBcL1Z2dVVHbThJMUJRZTk5S01MSU5reXdNVlNadFhjbjFkc28xUnRzd1Vjd0NGUjY2MFZSSU55Z3RaOElNUTBkUXNwYkFLSUF4bHRsM2lsUTVHZ3ZqMTJZenkwVzFnYllXd09PVUdVUHU3aVZwV0dmZDNUdWJraEljd1hzb3QxT1BEblczNEtDKzRcL0ZYbFJDVW1pdHA1cHN5VVJIZjUwNmMrTHN6WnpcLzdYN3ZORWdCMXN2andOOFg4MlFwMHYrXC8rbmMyTDlrSUwwMFBXQzFpdG5aS2J5WUw1clVhbmZQbGw2OVA1MVllZFI2VHNFQnZcL3Y0XC81NVp2bU9xc3FTWmxtVmczdGlHaFB5dTZaeUZjZUpoOXNvZU0zZUpJS3BEOUtXb3h1SlFwaWlsdldTZ3o2dGpENlpqTlkzMXRlZVwvMnk3bDRyTEVxNEpOVW5lV2kzTFQ5UXRLdmVuNDhcLytuT1wvaU9FVlZJNlp5SkE2bnloQTlTeHBvVDY5T0o4WitcL3k3bHljWVwvTTNcL0FNaDBvOTRSQXdBQSIsInN1YiI6ImFkbWluIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJTcHJpbmcgU2VjdXJpdHkgUkVTVCBHcmFpbHMgUGx1Z2luIiwiZXhwIjoxNjE2OTUwMjY0LCJpYXQiOjE2MTY5NDY2NjR9.qgUinNVa-8KkWawI6r6Iyhkb26KxcXP-EJk0z1FmdNo",
 				"type": "string"
 			}
 		]
@@ -725,7 +693,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "34253054-ad5b-45a4-8097-2baf5f8eca60",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -735,12 +702,17 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c643b85c-e3e9-415a-81d2-a5eedbc94d8d",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_DOMAIN",
+			"value": "http://localhost:8081/projet/api"
 		}
 	]
 }
