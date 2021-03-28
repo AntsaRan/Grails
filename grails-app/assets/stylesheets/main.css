@@ -613,3 +613,11 @@ img.grails-logo {
     color: black;
     font-weight: 600;
 }
+.navbarcustom {
+    background: #dc2945;
+    background-image: linear-gradient(
+            180deg
+            , #dc2945 10%, #4356b1 100%);
+    background-size: cover;
+}
+

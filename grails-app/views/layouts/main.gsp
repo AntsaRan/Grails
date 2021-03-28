@@ -24,14 +24,19 @@
     <g:layoutHead/>
 
 </head>
-
+<style>
+.navbar-nav>li>a:hover {
+    background-color: #92153b !important;
+    color: white !important;
+}
+</style>
 <body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav navbarcustom sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -110,7 +115,10 @@
                                aria-label="Search" aria-describedby="basic-addon2">
 
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn btn-primary" type="submit" style="
+    background-color: #d32c4c;
+    border-color: #d72e4a;
+">
                                 <i class="fas fa-search fa-sm"></i>
                             </button>
                         </div>
@@ -151,7 +159,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Profil</span>
                             <asset:image class="img-profile rounded-circle" src="undraw_profile.svg"/>
                         </a>
                         <!-- Dropdown - User Information -->
