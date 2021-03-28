@@ -39,7 +39,7 @@
                 <i class="fas fa-laugh-wink"></i>
             </div>
 
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Ads Manager</div>
         </a>
 
         <!-- Nav Item - Tables -->
@@ -48,19 +48,19 @@
                data-target="#collapseannonce" aria-expanded="true"
                aria-controls="collapseannonce">
                 <i class="fas fa-fw fa-newspaper"></i>
-                <span>Annonce</span>
+                <span>Ads</span>
             </a>
             <div id="collapseannonce" class="collapse" aria-labelledby="headingAnnoncz" data-parent="#accordionSidebar"
                  style="">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/projet/annonce/index">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                         Liste Annonce
+                          Ads List
                     </a>
 
                     <a class="collapse-item" href="/projet/annonce/create">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                         Ajout Annonce
+                          Create Ads
                     </a>
                 </div>
             </div>
@@ -76,12 +76,12 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/projet/user/index">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                         Liste User
+                        User List
                     </a>
 
                     <a class="collapse-item" href="/projet/user/create">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                         Ajout User
+                        Create User
                     </a>
                 </div>
             </div>

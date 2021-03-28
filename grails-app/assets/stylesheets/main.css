@@ -196,6 +196,7 @@ fieldset,
 
 .fieldcontain {
     margin-top: 1em;
+    margin-bottom: 3%;
 }
 .fieldcontain input,select{
     display: block;
@@ -593,11 +594,22 @@ img.grails-logo {
     margin-top: 6%;
 }
 .miniature {
-    width: 150px;
+    width: 130px;
 }
 .icondel {
     vertical-align: text-top;
 }
 .fieldcontainedit{
     width: 50%;
+}
+.labelflex{
+    display: flex;
+}
+.checkflex{
+
+}
+.labeltext{
+    width: 179px;
+    color: black;
+    font-weight: 600;
 }

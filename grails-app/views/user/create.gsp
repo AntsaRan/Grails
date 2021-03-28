@@ -7,15 +7,9 @@
 </head>
 
 <body>
-<a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                             default="Skip to content&hellip;"/></a>
-
-<div class="nav" role="navigation">
-    <ul>
-        <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]"/></g:link></li>
-    </ul>
-</div>
+<a href="#create-user" class="skip" tabindex="-1">
+    <g:message code="default.link.skip.label" default="Skip to content&hellip;"/>
+</a>
 
 <div id="create-user" class="content scaffold-create" role="main">
     <h1><g:message code="default.create.label" args="[entityName]"/></h1>
@@ -30,56 +24,91 @@
             </g:eachError>
         </ul>
     </g:hasErrors>
-    <g:form resource="${this.user}" method="POST">
-        <fieldset class="form">
-            <div class="fieldcontain required">
-                <label for="password">Password
-                    <span class="required-indicator">*</span>
-                </label><input type="password" name="password" required="" value="" id="password">
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <g:form resource="${this.user}" method="POST">
+                                <fieldset class="form">
+                                    <div class="fieldcontain required">
+                                        <label for="password">Password
+                                            <span class="required-indicator">*</span>
+                                        </label>
+                                        <input type="password" name="password" required="" value="" id="password">
+                                    </div>
 
-            <div class="fieldcontain required">
-                <label for="username">Username
-                    <span class="required-indicator">*</span>
-                </label><input type="text" name="username" value="" required="" id="username">
-            </div>
+                                    <div class="fieldcontain required">
+                                        <label for="username">Username
+                                            <span class="required-indicator">*</span>
+                                        </label>
+                                        <input type="text" name="username" value="" required="" id="username">
+                                    </div>
 
-            <div class="fieldcontain">
-                <label for="passwordExpired">Password Expired</label><input type="hidden" name="_passwordExpired"><input
-                    type="checkbox" name="passwordExpired" id="passwordExpired">
-            </div>
+                                    <div class="required labelflex">
+                                        <div for="passwordExpired" class="labeltext">
+                                            Password Expired lolo
+                                        </div>
+                                        <div>
+                                            <input class="checkflex" type="checkbox" name="passwordExpired"
+                                                   id="passwordExpired">
+                                        </div>
+                                        <input type="hidden" name="_passwordExpired">
+                                    </div>
 
-            <div class="fieldcontain">
-                <label for="accountLocked">Account Locked</label><input type="hidden" name="_accountLocked"><input
-                    type="checkbox" name="accountLocked" id="accountLocked">
-            </div>
+                                    <div class="labelflex">
+                                        <div for="accountLocked" class="labeltext">
+                                            Account Locked
+                                        </div>
+                                        <div>
+                                            <input class="checkflex" type="checkbox" name="accountLocked"
+                                                   id="accountLocked">
+                                            <input type="hidden" name="_accountLocked">
+                                        </div>
+                                    </div>
 
-            <div class="fieldcontain">
-                <label for="accountExpired">Account Expired</label><input type="hidden" name="_accountExpired"><input
-                    type="checkbox" name="accountExpired" id="accountExpired">
-            </div>
+                                    <div class="labelflex">
+                                        <div for="accountExpired" class="labeltext">Account Expired
+                                        </div>
+                                        <div>
+                                            <input class="checkflex" type="checkbox" name="accountExpired"
+                                                   id="accountExpired">
+                                            <input type="hidden" name="_accountExpired">
+                                        </div>
+                                    </div>
 
-            <div class="fieldcontain">
-                <label for="enabled">Enabled</label><input type="hidden" name="_enabled"><input type="checkbox"
-                                                                                                name="enabled"
-                                                                                                checked="checked" id="enabled">
-            </div>
+                                    <div class="labelflex">
+                                        <div for="enabled" class="labeltext">Enabled
+                                        </div>
+                                        <div>
+                                            <input class="checkflex" type="checkbox" name="enabled" checked="checked"
+                                                   id="enabled">
+                                            <input type="hidden" name="_enabled">
+                                        </div>
+                                    </div>
 
-            <div class="fieldcontain">
-                <label for="role">Role</label>
-                <input type="hidden" name="_role">
-                <select name="role" id="role">
-                    <g:each in="${roleList}" var="role">
-                        <option value="${role.id}">${role.authority}</option>
-                    </g:each>
-                </select>
+                                    <div class="fieldcontain">
+                                        <label for="role">Role</label>
+                                        <input type="hidden" name="_role">
+                                        <select name="role" id="role">
+                                            <g:each in="${roleList}" var="role">
+                                                <option value="${role.id}">${role.authority}</option>
+                                            </g:each>
+                                        </select>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <g:submitButton style="width: 100%; height: 50px; margin-top: 20px;" class="btn btn-success btn-icon-split" name="create"
+                                                    value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+                                </fieldset>
+                            </g:form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </fieldset>
-        <fieldset class="buttons">
-            <g:submitButton name="create" class="save"
-                            value="${message(code: 'default.button.create.label', default: 'Create')}"/>
-        </fieldset>
-    </g:form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

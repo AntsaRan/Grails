@@ -134,7 +134,7 @@
         </table>
 
         <div class="row">
-            <div class="col-sm-12 col-md-12">
+            <div class="col-sm-12 col-md-8">
                 <div class="dataTables_paginate paging_simple_numbers"
                      id="dataTable_paginate">
                     <ul class="pagination">

@@ -30,7 +30,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-8">
                             <g:uploadForm controller="annonce" action="save" method="POST">
                                 <fieldset class="form">
                                     <f:all bean="annonce" except="illustrations,author"/>
