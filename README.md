@@ -18,6 +18,9 @@
     - MODERATOR
     - CLIENT
 - L’administrateur et le modérateur pourront tous deux accéder au backend
+    - connexion
+        - administrateur: admin, password
+        - modérateur: moderateur, password
 - Le rôle CLIENT ne pourra pas acceder au backend
 - Au delà des utilisateurs (User) qui seront liés à des rôles (Role) pour la sécurité, le modèle de donnée permettra de gérer des annonces  et leurs illustrations
 - Toutes les opérations de CRUD seront disponible sur les entités représentant
