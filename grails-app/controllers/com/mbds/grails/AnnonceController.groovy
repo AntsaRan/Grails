@@ -17,6 +17,16 @@ class AnnonceController {
                 baseUrl: grailsApplication.config.annonces.illustrations.url
         ]
     }
+    @Secured(['ROLE_ADMIN','ROLE_MODO'])
+    def search() {
+        def search = params.search
+        def annonces = Annonce.findAllByTitleOrDescriptionLike("%"+search+"%","%"+search+"%")
+        respond annonces, model:[
+                annonceCount: annonceService.count(),
+                userList: User.list(),
+                baseUrl: grailsApplication.config.annonces.illustrations.url
+        ]
+    }
     def indexuser(Integer max,Integer id) {
         def annonces=Annonce.findAllByAuthor(User.findById(id),[max: max,offset: 10])
         respond annonces
