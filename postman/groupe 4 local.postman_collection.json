@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "23d0f236-db8e-4ded-a491-f4388648d2c3",
-		"name": "groupe 4 final",
+		"_postman_id": "901ce786-ecdb-47f9-a613-b1046934226a",
+		"name": "groupe 4 local",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -201,7 +201,7 @@
 					"response": []
 				},
 				{
-					"name": "post ???",
+					"name": "post",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -491,7 +491,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Titre de l'j api2ezrzrzer\"\r\n}"
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8081/projet/api/annonce/2",
@@ -559,7 +559,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Titre de l'j api2\"\r\n}"
+									"raw": "{\r\n    \"title\": \"Titre de l'j api2ezrzrzer\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8081/projet/api/annonce/2",
@@ -711,12 +711,8 @@
 	],
 	"variable": [
 		{
-			"key": "DOMAIN",
-			"value": "http://grails-itu-mbds-groupe-4.herokuapp.com/projet"
-		},
-		{
 			"key": "API_DOMAIN",
-			"value": "http://grails-itu-mbds-groupe-4.herokuapp.com/projet/api"
+			"value": "http://localhost:8081/projet/api"
 		}
 	]
 }

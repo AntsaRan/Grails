@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "23d0f236-db8e-4ded-a491-f4388648d2c3",
-		"name": "groupe 4 final",
+		"_postman_id": "40ba31f5-95f5-4565-93e5-ee395988f71a",
+		"name": "groupe 4 heroku",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -201,7 +201,7 @@
 					"response": []
 				},
 				{
-					"name": "post ???",
+					"name": "post",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -710,10 +710,6 @@
 		}
 	],
 	"variable": [
-		{
-			"key": "DOMAIN",
-			"value": "http://grails-itu-mbds-groupe-4.herokuapp.com/projet"
-		},
 		{
 			"key": "API_DOMAIN",
 			"value": "http://grails-itu-mbds-groupe-4.herokuapp.com/projet/api"
