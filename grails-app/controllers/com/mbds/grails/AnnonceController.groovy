@@ -51,7 +51,9 @@ class AnnonceController {
         if (!f.empty) {
 
             def filen = f.originalFilename
-            def path = 'D:\\ITU\\M2\\Galli\\grails-itu-mbds-groupe-4\\grails-app\\assets\\images\\' + filen
+            /*def path = 'D:\\ITU\\M2\\Galli\\grails-itu-mbds-groupe-4\\grails-app\\assets\\images\\' + filen*/
+            def path = 'http:\\grails-itu-mbds-groupe-4.herokuapp.com\\projet\\assets\\images\\' + filen
+
             def illu=new Illustration(
                     filename: filen
             )
